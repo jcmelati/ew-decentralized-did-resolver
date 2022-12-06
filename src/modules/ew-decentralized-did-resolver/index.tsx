@@ -1,9 +1,9 @@
 import { resolve as resolveDID } from '../ew-did-resolver'
 
 const rpcs = [
-    'https://www.terra.com.br/',
-    'https://www.terra.com.br/',
-    'https://www.terra.com.br/',
+    'https://rpc-i7tg65ri67rf.energyweb.org',
+    'https://rpc.energyweb.org/',
+    'https://consortia-rpc.energyweb.org/',
 ]
 
 export async function resolve(did: string): Promise<string | null> {

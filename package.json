@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@energyweb/credential-governance": "2.2.1-alpha.310.0",
     "@ew-did-registry/claims": "0.8.1-alpha.996.0",
     "@ew-did-registry/credentials-interface": "0.8.1-alpha.996.0",
     "@ew-did-registry/did": "0.8.1-alpha.996.0",
@@ -14,7 +15,6 @@
     "@ew-did-registry/keys": "0.8.1-alpha.996.0",
     "@ew-did-registry/proxyidentity": "0.8.1-alpha.996.0",
     "@ew-did-registry/revocation": "0.8.1-alpha.996.0",
-    "@energyweb/credential-governance": "2.2.1-alpha.310.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -25,6 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "typescript": "*",
     "web-vitals": "^2.1.0"
   },
@@ -53,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
