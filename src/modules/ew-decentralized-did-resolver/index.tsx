@@ -11,10 +11,6 @@ export async function resolve(did: string): Promise<string | null> {
 
     const outcomes = await Promise.allSettled(requests)
 
-    if (outcomes === undefined) {
-        return null
-    }
-
     // Filter out the rejected promises
     const isFulfilled = (
         result: PromiseSettledResult<Object>
