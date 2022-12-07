@@ -1,3 +1,5 @@
+import CryptoJS from 'crypto-js'
+import { toast } from 'react-toastify'
 import { Resolver } from '@ew-did-registry/did-ethr-resolver'
 import { RegistrySettings } from '@ew-did-registry/did-resolver-interface'
 import { providers } from 'ethers'
@@ -12,9 +14,23 @@ const registrySettings: RegistrySettings = {
 }
 
 export const resolve = async (did: string, rpc: string): Promise<Object> => {
+    toast.success(`Asking ${rpc}`)
+
     const provider = new providers.JsonRpcProvider(rpc)
     const resolver = new Resolver(provider, registrySettings)
     const didDocument = await resolver.read(did)
+
+    const DIDDocument = JSON.stringify(didDocument)
+
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    const hash = `#${CryptoJS.SHA256(DIDDocument).toString().substring(0, 8)}`
+
+    toast.success(`RESOLVED`, {
+        style: {
+            backgroundColor: hash,
+            color: 'white',
+        },
+    })
 
     return didDocument
 }

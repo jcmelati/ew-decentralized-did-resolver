@@ -1,4 +1,5 @@
 import React from 'react'
+import { toast } from 'react-toastify'
 
 import { StyledForm, TextArea } from './form.styles'
 
@@ -12,6 +13,12 @@ const Form: React.FC<FormProps> = ({ resolve }) => {
 
     const processDIDResolution = async (did: string): Promise<void> => {
         const diddoc = await resolve(did)
+
+        if (diddoc == null) {
+            toast.error('Invalid DID')
+        } else {
+            toast.success('DID Document found')
+        }
 
         setTextAreaValue(diddoc != null ? JSON.stringify(diddoc, null, 4) : '')
     }
